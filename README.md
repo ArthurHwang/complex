@@ -9,6 +9,6 @@ Express |
 Redis |
 Postgres |
 TravisCI |
-AWS elastic beanstalk
+AWS Elastic Beanstalk
 
                  
