@@ -8,4 +8,7 @@ React |
 Express |
 Redis |
 Postgres |
+TravisCI |
+AWS elastic beanstalk
 
+                 
