@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t illitirit/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run illitirit/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t illitirit/complex-client ./client
+  - docker build -t illitirit/complex-nginx ./nginx
+  - docker build -t illitirit/complex-server ./server
+  - docker build -t illitirit/complex-worker ./worker
+  #Log in to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  #take images and push to docker hub
+  - docker push illitirit/complex-client
+  - docker push illitirit/complex-nginx
+  - docker push illitirit/complex-server
+  - docker push illitirit/complex-worker
