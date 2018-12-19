@@ -10,16 +10,17 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <p>Testing websocket</p>
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            <img src={ logo } className="App-logo" alt="logo" />
+            <h1 className="App-title">Fibbers</h1>
             <Link to="/">Home</Link>
             <Link to="/otherpage">Other Page</Link>
+            <div>
+              <Route exact path="/" component={ Fib } />
+              <Route path="/otherpage" component={ OtherPage } />
+            </div>
           </header>
-          <div>
-            <Route exact path="/" component={Fib} />
-            <Route path="/otherpage" component={OtherPage} />
-          </div>
         </div>
       </Router>
     );
