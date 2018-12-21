@@ -10,10 +10,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <p>Testing websocket</p>
           <header className="App-header">
             <img src={ logo } className="App-logo" alt="logo" />
-            <h1 className="App-title">Fibbers</h1>
+            <h1 className="App-title">Fib bo Nahchi</h1>
             <Link to="/">Home</Link>
             <Link to="/otherpage">Other Page</Link>
             <div>
